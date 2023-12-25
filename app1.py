@@ -11,9 +11,10 @@ def percentage(integer_part):
   cal = x / 0.707
   loan_percentage = round(cal)
   # scaling 1-100 into 1000-10,000 to calculate loan amount
-  ratio = 9000/99
+  # scaling 1-100 into 100,000-10,000 to calculate loan amount
+  ratio = 90000/99
   amount = ratio * (loan_percentage - 1)
-  loan_amount = round(amount + 1000)
+  loan_amount = round(amount + 10000)
   # loan_amount =round((loan_percentage / 100) * 10000)
   return loan_amount
 
@@ -63,7 +64,7 @@ def main():
             # st.write(f"**Loan Amount** => {amount}")
             if abc >=30:
                 amount = percentage(abc)
-                st.write(f"**Loan Amount is** : {amount}")
+                st.write(f"**Loan Amount in USD** : $ {amount}")
             else:
                st.write(f"**You are Not Elegible**") 
 
